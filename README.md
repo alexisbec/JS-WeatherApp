@@ -21,6 +21,14 @@ To get a local copy up and running follow these simple example steps:
   https://github.com/alexisbec/JS-WeatherApp.git
 ```
 - Open the project folder where the repository was downloaded.
+- Install all the Webpack dependencies:
+```
+  npm install
+```
+- Compile all the JS files:
+```
+  npm run build
+```
 - Open the *index.html* file with your live server.
 - Start the navigation throw the site using the tabs on the navbar.
 

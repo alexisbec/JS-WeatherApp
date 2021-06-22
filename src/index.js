@@ -13,6 +13,9 @@ const getWeather = async (city = 'New York') => {
     dCity.innerHTML = data.name;
     const dWeather = document.querySelector('#dWeather');
     dWeather.innerHTML = `${data.main.temp} °C`;
+
+    // const f = convertToF(data.main.temp);
+    // dWeather.innerHTML = `${f} °F`;
     const feelsWeather = document.querySelector('#feelsWeather');
     feelsWeather.innerHTML = `${data.main.feels_like} °C`;
   } catch (error) {
@@ -29,6 +32,12 @@ const selectCity = () => {
     return;
   }
   getWeather(city);
+};
+
+const convertToF = (celsius) => {
+  const farenheit = celsius * 9 / 5 + 32;
+  
+  return farenheit;
 };
 
 const fetchCity = () => {
