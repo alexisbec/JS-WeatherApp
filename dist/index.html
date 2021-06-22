@@ -11,18 +11,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="form-container">
-    <h1>Enter your City...</h1>
-    <form id="cityForm">
-      <p id="error"></p>
-      <input id="city" class="city-input" type="text">
-      <input id="findCity" type="submit" value="Submit">
-    </form>
-  </div>
-
-  <div class="city-container">
-    <h2 id="dCity"></h2>
-    <p id="dWeather"></p>
+  <div class="main-container">
+    <div class="form-container">
+      <img class="logo" src="../src/img/logo.png" alt="Weather Center">
+      <form id="cityForm">
+        <p id="error"></p>
+        <input id="city" class="city-input" type="text" placeholder="Enter your city...">
+        <input id="findCity" type="submit" value="Search">
+      </form>
+    </div>
+  
+    <div class="city-container">
+      <h2 id="dCity" class="city-name"></h2>
+      <div class="weather-info">
+        <p class="temp">Temp: <strong id="dWeather"></strong></p>
+        <p class="temp">Feels like: <strong id="feelsWeather"></strong></p>
+      </div>
+    </div>
   </div>
   <script src="../src/index.js"></script>
 </body>

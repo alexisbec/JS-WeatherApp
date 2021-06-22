@@ -1,7 +1,7 @@
-const getWeather = async (city = 'Mexico') => {
-  const addForm = document.forms['cityForm'];
+const getWeather = async (city = 'New York') => {
+  const cityForm = document.forms['cityForm'];
 
-  addForm.addEventListener('submit', function (e) {
+  cityForm.addEventListener('submit', function (e) {
     e.preventDefault();
   });
 
@@ -13,22 +13,24 @@ const getWeather = async (city = 'Mexico') => {
     dCity.innerHTML = data.name;
     const dWeather = document.querySelector('#dWeather');
     dWeather.innerHTML = `${data.main.temp} °C`;
+    const feelsWeather = document.querySelector('#feelsWeather');
+    feelsWeather.innerHTML = `${data.main.feels_like} °C`;
   } catch (error) {
     console.log('error');
   }
 };
 
-const changeCity = () => {
+const selectCity = () => {
   const city = document.querySelector('#city').value;
   if (city === '') {
     const errors = document.querySelector('#error');
-    errors.innerHTML = 'City can\'t be blank';
+    errors.innerHTML = "City can't be blank";
     return;
   }
   getWeather(city);
 };
 
-const emptyVals = () => {
+const inputVal = () => {
   const errors = document.querySelector('#error');
   errors.innerHTML = '';
   document.getElementById('city').value = '';
@@ -37,7 +39,7 @@ const emptyVals = () => {
 const fetchCity = () => {
   getWeather();
   const btn = document.querySelector('#findCity');
-  btn.addEventListener('click', () => { changeCity(); });
+  btn.addEventListener('click', () => { selectCity(); });
 }
 
 fetchCity();
