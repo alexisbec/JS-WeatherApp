@@ -12,10 +12,6 @@
 - Webpack
 - OpenWeather API
 
-## Live Demo
-
-Click [here](https://alexisbec.github.io/JS-WeatherApp/) to watch the live demo.
-
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps:
