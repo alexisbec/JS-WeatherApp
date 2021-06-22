@@ -20,9 +20,9 @@ body {
 }
 
 .main-container {
-  background: rgba( 255, 255, 255, 0.30 );
-  backdrop-filter: blur( 15.5px );
-  -webkit-backdrop-filter: blur( 15.5px );
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15.5px);
+  -webkit-backdrop-filter: blur(15.5px);
   border-radius: 10px;
   border: none;
   width: 60vw;
@@ -54,15 +54,15 @@ form {
   width: 20vw;
   padding: 0 1em;
   font-size: 1.2em;
-  background-color: #DFEEEA;
-  color: #113F67;
+  background-color: #dfeeea;
+  color: #113f67;
   font-family: 'Comfortaa', cursive;
 }
 
 input[type=submit] {
   cursor: pointer;
   background-color: #e4b83f;
-  color: #DFEEEA;
+  color: #dfeeea;
   font-family: 'Comfortaa', cursive;
   border: none;
   border-radius: 5px;
@@ -78,9 +78,9 @@ input[type=submit]:hover {
 }
 
 .city-name {
-  border: 5px solid #085F63;
+  border: 5px solid #085f63;
   border-radius: 5px;
-  color: #085F63;
+  color: #085f63;
   padding: 0.8em 1em;
   font-size: 2em;
   text-align: center;
@@ -93,9 +93,9 @@ input[type=submit]:hover {
 
 .temp {
   margin: 2em 1em;
-  border: 5px solid #FF5959;
+  border: 5px solid #ff5959;
   border-radius: 5px;
-  color: #FF5959;
+  color: #ff5959;
   padding: 0.8em 1em;
   font-size: 2em;
   text-align: center;
