@@ -1,7 +1,7 @@
 const getWeather = async (city = 'New York') => {
-  const cityForm = document.forms['cityForm'];
+  const { cityForm } = document.forms;
 
-  cityForm.addEventListener('submit', function (e) {
+  cityForm.addEventListener('submit', (e) => {
     e.preventDefault();
   });
 
@@ -16,7 +16,8 @@ const getWeather = async (city = 'New York') => {
     const feelsWeather = document.querySelector('#feelsWeather');
     feelsWeather.innerHTML = `${data.main.feels_like} °C`;
   } catch (error) {
-    console.log('error');
+    const errors = document.querySelector('#error');
+    errors.innerHTML = "City can't be blank";
   }
 };
 
@@ -34,6 +35,6 @@ const fetchCity = () => {
   getWeather();
   const btn = document.querySelector('#findCity');
   btn.addEventListener('click', () => { selectCity(); });
-}
+};
 
 fetchCity();
