@@ -30,12 +30,6 @@ const selectCity = () => {
   getWeather(city);
 };
 
-const inputVal = () => {
-  const errors = document.querySelector('#error');
-  errors.innerHTML = '';
-  document.getElementById('city').value = '';
-};
-
 const fetchCity = () => {
   getWeather();
   const btn = document.querySelector('#findCity');

@@ -47,6 +47,11 @@ form {
   flex-direction: column;
 }
 
+.error-msg {
+  color: #ff5959;
+  margin: 0.5em 0;
+}
+
 .city-input {
   border: none;
   border-radius: 5px;
