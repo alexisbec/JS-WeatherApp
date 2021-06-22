@@ -1,0 +1,47 @@
+body {
+  background-color: aqua;
+  font-family: 'Comfortaa', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+.header-container {
+  text-align: center;
+}
+
+form {
+  width: 20vw;
+  height: 15vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.city-input {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  height: 3em;
+  width: 100%;
+  padding: 0 1em;
+  font-size: 1.2em;
+  background-color: #DFEEEA;
+  color: #2F5D62;
+  font-family: 'Comfortaa', cursive;
+}
+
+input[type=submit] {
+  cursor: pointer;
+  background-color: #2F5D62;
+  color: #DFEEEA;
+  font-family: 'Comfortaa', cursive;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.4em;
+  padding: 0.5em 1.5em;
+}
