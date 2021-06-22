@@ -1,4 +1,10 @@
 const getWeather = async (city = 'Mexico') => {
+  const addForm = document.forms['cityForm'];
+
+  addForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+  });
+
   try {
     const weather = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=1ec6b9c9b5c527cdcded5b165dc7b7c0&units=metric`);
     const data = await weather.json();
@@ -20,6 +26,12 @@ const changeCity = () => {
     return;
   }
   getWeather(city);
+};
+
+const emptyVals = () => {
+  const errors = document.querySelector('#error');
+  errors.innerHTML = '';
+  document.getElementById('city').value = '';
 };
 
 const fetchCity = () => {
