@@ -16,13 +16,17 @@
       <img class="logo" src="../src/img/logo.png" alt="Weather Center">
       <form id="cityForm">
         <p id="error" class="error-msg"></p>
-        <div>
-          <label for="Celsius" class="label">Celsius</label>
-          <input id="celsius" type="checkbox" name="Celsius" class="check" onClick="ckChange(this)">
-          <label for="Farenheit" class="label">Farenheit</label>
-          <input id="farenheit" type="checkbox" name="Farenheit" class="check" onClick="ckChange(this)">
-        </div>
         <input id="city" class="city-input" type="text" placeholder="Enter your city...">
+        <div class="centigrades">
+          <div class="check">
+            <labelclass="label">Celsius</label>
+            <input id="celsius" type="radio" name="checked">
+          </div>
+          <div class="check">
+            <labelclass="label">Farenheit</label>
+            <input id="farenheit" type="radio" name="checked">
+          </div>
+        </div>
         <input id="findCity" type="submit" value="Search">
       </form>
     </div>

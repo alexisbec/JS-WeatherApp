@@ -15,28 +15,26 @@ const getWeather = async (city = 'New York') => {
     dCity.innerHTML = data.name;
     const dWeather = document.querySelector('#dWeather');
     dWeather.innerHTML = `${data.main.temp} °C`;
-    
-    if (celsius.checked) {
-      dWeather.innerHTML = `${data.main.temp} °C`;
-    } else if (farenheit.checked) {
-      const f = convertToF(data.main.temp);
-      dWeather.innerHTML = `${f} °F`;
-    }
-
     const feelsWeather = document.querySelector('#feelsWeather');
     feelsWeather.innerHTML = `${data.main.feels_like} °C`;
+
+    if (celsius.checked) {
+      dWeather.innerHTML = `${data.main.temp} °C`;
+      const feelsWeather = document.querySelector('#feelsWeather');
+      feelsWeather.innerHTML = `${data.main.feels_like} °C`;
+      cityForm.reset();
+    } else if (farenheit.checked) {
+      const fMain = convertToF(data.main.temp);
+      dWeather.innerHTML = `${fMain} °F`;
+      const fFeels = convertToF(data.main.feels_like);
+      feelsWeather.innerHTML = `${fFeels} °F`;
+      cityForm.reset();
+    }
   } catch (error) {
     const errors = document.querySelector('#error');
     errors.innerHTML = "City can't be blank";
   }
 };
-
-function ckChange(el) {
-  var ckName = document.querySelectorAll('.check');
-  for (var i = 0, c; c = ckName[i]; i++) {
-    c.disabled = !(!el.checked || c === el);
-  }
-}
 
 const selectCity = () => {
   const city = document.querySelector('#city').value;

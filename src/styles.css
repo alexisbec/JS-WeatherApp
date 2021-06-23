@@ -61,6 +61,20 @@ form {
   font-size: 1.2em;
   background-color: #dfeeea;
   color: #113f67;
+  margin: 1em 0;
+}
+
+.centigrades {
+  display: flex;
+}
+
+.check {
+  margin: 1em;
+  font-size: 1.5em;
+}
+
+input[type=radio] {
+  cursor: pointer;
 }
 
 input[type=submit] {
@@ -72,7 +86,7 @@ input[type=submit] {
   font-size: 1.5em;
   font-weight: bolder;
   padding: 0.5em 1.5em;
-  margin: 1.5em 0;
+  margin: 1em 0;
 }
 
 input[type=submit]:hover {
