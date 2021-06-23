@@ -1,3 +1,8 @@
+const convertToF = (celsius) => {
+  const farenheit = (celsius * 9) / 5 + 32;
+  return farenheit.toFixed(2);
+};
+
 const getWeather = async (city = 'New York') => {
   const { cityForm } = document.forms;
 
@@ -33,15 +38,15 @@ const getWeather = async (city = 'New York') => {
     }
 
     if (infoWeather === 'Rain') {
-      document.body.style.backgroundImage = "url('../src/img/rain_bg.png')"
+      document.body.style.backgroundImage = "url('../src/img/rain_bg.png')";
     } else if (infoWeather === 'Clouds') {
-      document.body.style.backgroundImage = "url('../src/img/clouds_bg.png')"
+      document.body.style.backgroundImage = "url('../src/img/clouds_bg.png')";
     } else if (infoWeather === 'Clear') {
-      document.body.style.backgroundImage = "url('../src/img/clear_bg.png')"
+      document.body.style.backgroundImage = "url('../src/img/clear_bg.png')";
     } else if (infoWeather === 'Snow') {
-      document.body.style.backgroundImage = "url('../src/img/snow_bg.png')"
+      document.body.style.backgroundImage = "url('../src/img/snow_bg.png')";
     } else {
-      document.body.style.backgroundImage = "url('../src/img/background.png')"
+      document.body.style.backgroundImage = "url('../src/img/background.png')";
     }
   } catch (error) {
     const errors = document.querySelector('#error');
@@ -57,11 +62,6 @@ const selectCity = () => {
     return;
   }
   getWeather(city);
-};
-
-const convertToF = (celsius) => {
-  const farenheit = (celsius * 9) / 5 + 32;
-  return farenheit.toFixed(2);
 };
 
 const fetchCity = () => {
