@@ -17,6 +17,7 @@ const getWeather = async (city = 'New York') => {
     dWeather.innerHTML = `${data.main.temp} °C`;
     const feelsWeather = document.querySelector('#feelsWeather');
     feelsWeather.innerHTML = `${data.main.feels_like} °C`;
+    const infoWeather = data.weather[0].main;
 
     if (celsius.checked) {
       dWeather.innerHTML = `${data.main.temp} °C`;
@@ -29,6 +30,18 @@ const getWeather = async (city = 'New York') => {
       const fFeels = convertToF(data.main.feels_like);
       feelsWeather.innerHTML = `${fFeels} °F`;
       cityForm.reset();
+    }
+
+    if (infoWeather === 'Rain') {
+      document.body.style.backgroundImage = "url('../src/img/rain_bg.png')"
+    } else if (infoWeather === 'Clouds') {
+      document.body.style.backgroundImage = "url('../src/img/clouds_bg.png')"
+    } else if (infoWeather === 'Clear') {
+      document.body.style.backgroundImage = "url('../src/img/clear_bg.png')"
+    } else if (infoWeather === 'Snow') {
+      document.body.style.backgroundImage = "url('../src/img/snow_bg.png')"
+    } else {
+      document.body.style.backgroundImage = "url('../src/img/background.png')"
     }
   } catch (error) {
     const errors = document.querySelector('#error');
@@ -47,7 +60,7 @@ const selectCity = () => {
 };
 
 const convertToF = (celsius) => {
-  const farenheit = celsius * 9 / 5 + 32;
+  const farenheit = (celsius * 9) / 5 + 32;
   return farenheit.toFixed(2);
 };
 
