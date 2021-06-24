@@ -30,7 +30,8 @@ To get a local copy up and running follow these simple example steps:
   npm run build
 ```
 - Open the *index.html* file with your live server.
-- Start the navigation throw the site using the tabs on the navbar.
+- Fill the form with the city you want to see.
+- Select the value that you want to see the centigrades (between Celsius or Farenheit).
 
 ## Prerequisites
 

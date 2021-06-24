@@ -20,6 +20,7 @@ const getWeather = async (city = 'New York') => {
     const feelsWeather = document.querySelector('#feelsWeather');
     feelsWeather.innerHTML = `${dataC.main.feels_like} °C`;
     const infoWeather = dataC.weather[0].main;
+    cityForm.reset();
 
     if (celsius.checked) {
       dWeather.innerHTML = `${dataC.main.temp} °C`;
