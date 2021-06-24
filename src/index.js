@@ -1,8 +1,3 @@
-const convertToF = (celsius) => {
-  const farenheit = (celsius * 9) / 5 + 32;
-  return farenheit.toFixed(2);
-};
-
 const getWeather = async (city = 'New York') => {
   const { cityForm } = document.forms;
 
@@ -11,29 +6,30 @@ const getWeather = async (city = 'New York') => {
   });
 
   try {
-    const weather = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=1ec6b9c9b5c527cdcded5b165dc7b7c0&units=metric`);
-    const data = await weather.json();
+    const weatherC = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=1ec6b9c9b5c527cdcded5b165dc7b7c0&units=metric`);
+    const weatherF = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=1ec6b9c9b5c527cdcded5b165dc7b7c0&units=imperial`);
+    const dataC = await weatherC.json();
+    const dataF = await weatherF.json();
 
     const celsius = document.querySelector('#celsius');
     const farenheit = document.querySelector('#farenheit');
     const dCity = document.querySelector('#dCity');
-    dCity.innerHTML = data.name;
+    dCity.innerHTML = dataC.name;
     const dWeather = document.querySelector('#dWeather');
-    dWeather.innerHTML = `${data.main.temp} °C`;
+    dWeather.innerHTML = `${dataC.main.temp} °C`;
     const feelsWeather = document.querySelector('#feelsWeather');
-    feelsWeather.innerHTML = `${data.main.feels_like} °C`;
-    const infoWeather = data.weather[0].main;
+    feelsWeather.innerHTML = `${dataC.main.feels_like} °C`;
+    const infoWeather = dataC.weather[0].main;
 
     if (celsius.checked) {
-      dWeather.innerHTML = `${data.main.temp} °C`;
+      dWeather.innerHTML = `${dataC.main.temp} °C`;
       const feelsWeather = document.querySelector('#feelsWeather');
-      feelsWeather.innerHTML = `${data.main.feels_like} °C`;
+      feelsWeather.innerHTML = `${dataC.main.feels_like} °C`;
       cityForm.reset();
     } else if (farenheit.checked) {
-      const fMain = convertToF(data.main.temp);
-      dWeather.innerHTML = `${fMain} °F`;
-      const fFeels = convertToF(data.main.feels_like);
-      feelsWeather.innerHTML = `${fFeels} °F`;
+      dWeather.innerHTML = `${dataF.main.temp} °F`;
+      const feelsWeather = document.querySelector('#feelsWeather');
+      feelsWeather.innerHTML = `${dataF.main.feels_like} °F`;
       cityForm.reset();
     }
 
