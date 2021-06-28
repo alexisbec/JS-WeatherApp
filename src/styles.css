@@ -20,7 +20,7 @@ body {
 
 .main-container {
   background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(20px);
   border-radius: 10px;
   border: none;
@@ -64,19 +64,6 @@ form {
   margin: 1em 0;
 }
 
-.centigrades {
-  display: flex;
-}
-
-.check {
-  margin: 1em;
-  font-size: 1.5em;
-}
-
-input[type=radio] {
-  cursor: pointer;
-}
-
 input[type=submit] {
   cursor: pointer;
   background-color: #e4b83f;
@@ -109,11 +96,18 @@ input[type=submit]:hover {
 }
 
 .temp {
-  margin: 2em 1em;
+  margin: 2em 1em 3em;
   border: 5px solid #ff5959;
   border-radius: 5px;
   color: #ff5959;
   padding: 0.8em 1em;
   font-size: 2em;
   text-align: center;
+}
+
+.checkbox {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 2em 3em;
 }

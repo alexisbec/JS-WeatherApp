@@ -17,16 +17,6 @@
       <form id="cityForm">
         <p id="error" class="error-msg"></p>
         <input id="city" class="city-input" type="text" placeholder="Enter your city...">
-        <div class="centigrades">
-          <div class="check">
-            <labelclass="label">Celsius</label>
-            <input id="celsius" type="radio" name="checked">
-          </div>
-          <div class="check">
-            <labelclass="label">Farenheit</label>
-            <input id="farenheit" type="radio" name="checked">
-          </div>
-        </div>
         <input id="findCity" type="submit" value="Search">
       </form>
     </div>
@@ -37,6 +27,11 @@
         <p class="temp">Temp: <strong id="dWeather"></strong></p>
         <p class="temp">Feels like: <strong id="feelsWeather"></strong></p>
       </div>
+    </div>
+
+    <div class="checkbox">
+      <label for="check">Farenheit</label>
+      <input type="checkbox" id="farenheit" name="check">
     </div>
   </div>
   <script src="../src/index.js"></script>

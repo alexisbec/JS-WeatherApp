@@ -1,5 +1,5 @@
 const getWeather = async (city = 'New York') => {
-  const { cityForm } = document.forms;
+  const cityForm = document.querySelector('#cityForm');
 
   cityForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -11,7 +11,6 @@ const getWeather = async (city = 'New York') => {
     const dataC = await weatherC.json();
     const dataF = await weatherF.json();
 
-    const celsius = document.querySelector('#celsius');
     const farenheit = document.querySelector('#farenheit');
     const dCity = document.querySelector('#dCity');
     dCity.innerHTML = dataC.name;
@@ -22,17 +21,15 @@ const getWeather = async (city = 'New York') => {
     const infoWeather = dataC.weather[0].main;
     cityForm.reset();
 
-    if (celsius.checked) {
-      dWeather.innerHTML = `${dataC.main.temp} °C`;
-      const feelsWeather = document.querySelector('#feelsWeather');
-      feelsWeather.innerHTML = `${dataC.main.feels_like} °C`;
-      cityForm.reset();
-    } else if (farenheit.checked) {
-      dWeather.innerHTML = `${dataF.main.temp} °F`;
-      const feelsWeather = document.querySelector('#feelsWeather');
-      feelsWeather.innerHTML = `${dataF.main.feels_like} °F`;
-      cityForm.reset();
-    }
+    farenheit.addEventListener('click', () => {
+      if (farenheit.checked == true) {
+        dWeather.innerHTML = `${dataF.main.temp} °F`;
+        feelsWeather.innerHTML = `${dataF.main.feels_like} °F`;
+      } else {
+        dWeather.innerHTML = `${dataC.main.temp} °C`;
+        feelsWeather.innerHTML = `${dataC.main.feels_like} °C`;
+      }
+    });
 
     if (infoWeather === 'Rain') {
       document.body.style.backgroundImage = "url('../src/img/rain_bg.png')";
@@ -49,6 +46,10 @@ const getWeather = async (city = 'New York') => {
     const errors = document.querySelector('#error');
     errors.innerHTML = "City can't be blank";
   }
+};
+
+const reloadCentigrades = () => {
+
 };
 
 const selectCity = () => {
