@@ -21,13 +21,13 @@ const getWeather = async (city = 'New York') => {
     const infoWeather = dataC.weather[0].main;
     cityForm.reset();
 
-    if (farenheit.checked == true) {
+    if (farenheit.checked === true) {
       dWeather.innerHTML = `${dataF.main.temp} °F`;
       feelsWeather.innerHTML = `${dataF.main.feels_like} °F`;
     }
 
     farenheit.addEventListener('click', () => {
-      if (farenheit.checked == true) {
+      if (farenheit.checked === true) {
         dWeather.innerHTML = `${dataF.main.temp} °F`;
         feelsWeather.innerHTML = `${dataF.main.feels_like} °F`;
       } else {
@@ -51,10 +51,6 @@ const getWeather = async (city = 'New York') => {
     const errors = document.querySelector('#error');
     errors.innerHTML = "City can't be blank";
   }
-};
-
-const reloadCentigrades = () => {
-
 };
 
 const selectCity = () => {
