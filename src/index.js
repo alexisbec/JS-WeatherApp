@@ -21,6 +21,11 @@ const getWeather = async (city = 'New York') => {
     const infoWeather = dataC.weather[0].main;
     cityForm.reset();
 
+    if (farenheit.checked == true) {
+      dWeather.innerHTML = `${dataF.main.temp} °F`;
+      feelsWeather.innerHTML = `${dataF.main.feels_like} °F`;
+    }
+
     farenheit.addEventListener('click', () => {
       if (farenheit.checked == true) {
         dWeather.innerHTML = `${dataF.main.temp} °F`;
