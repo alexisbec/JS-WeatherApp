@@ -1,0 +1,128 @@
+* {
+  transition: 0.5s;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Comfortaa', cursive;
+}
+
+body {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.main-container {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: none;
+  width: 60vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo {
+  width: 20vw;
+  margin: 2em 0;
+  cursor: pointer;
+}
+
+.form-container {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.error-msg {
+  color: #ff5959;
+  margin: 0.5em 0;
+}
+
+.city-input {
+  border: none;
+  border-radius: 5px;
+  height: 3em;
+  width: 20vw;
+  padding: 0 1em;
+  font-size: 1.2em;
+  background-color: #dfeeea;
+  color: #113f67;
+  margin: 1em 0;
+}
+
+input[type=submit] {
+  cursor: pointer;
+  background-color: #e4b83f;
+  color: #dfeeea;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5em;
+  font-weight: bolder;
+  padding: 0.5em 1.5em;
+  margin: 1em 0;
+}
+
+input[type=submit]:hover {
+  transform: scale(1.1);
+  background-color: #c7a139;
+}
+
+.city-name {
+  border: 5px solid #085f63;
+  border-radius: 5px;
+  color: #085f63;
+  padding: 0.8em 1em;
+  font-size: 2em;
+  text-align: center;
+  margin: 1em 5em;
+}
+
+.weather-info {
+  display: flex;
+}
+
+.temp {
+  margin: 2em 1em 4em;
+  border: 5px solid #ff5959;
+  border-radius: 5px;
+  color: #ff5959;
+  padding: 0.8em 1em;
+  font-size: 2em;
+  text-align: center;
+}
+
+.checkbox {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 2em 3em;
+  background: #e4b83f;
+  border-radius: 5px;
+  padding: 0.7em;
+  font-size: 1.2em;
+  color: #dfeeea;
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox input {
+  height: 20px;
+  width: 20px;
+  margin-left: 1em;
+  cursor: pointer;
+}
